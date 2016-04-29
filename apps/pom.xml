@@ -80,8 +80,8 @@
         <module>rabbitmq</module>
         <module>learning-switch</module>
         <module>tenbi</module>
+        <module>onos-app-castor</module>
     </modules>
-
 
     <properties>
         <web.context>default</web.context>
