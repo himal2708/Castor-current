@@ -89,6 +89,7 @@ public class ConnectivityManager implements ConnectivityManagerService {
     @Activate
     public void activate() {
         appId = coreService.getAppId(Castor.CASTOR_APP);
+        log.info("conn manager started");
     }
 
     @Deactivate

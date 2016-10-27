@@ -95,6 +95,7 @@ public class CastorArpManager implements ArpService  {
         appId = coreService.getAppId(Castor.CASTOR_APP);
         packetService.addProcessor(processor, PacketProcessor.director(1));
         requestPackets();
+        log.info("arp manager started");
     }
 
     @Deactivate

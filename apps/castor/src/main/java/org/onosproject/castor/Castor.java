@@ -55,6 +55,7 @@ public class Castor {
         applicationService.registerDeactivateHook(appId, () -> {
             intentSynchronizer.removeIntentsByAppId(appId);
         });
+        log.info("castor started");
     }
 
     @Deactivate

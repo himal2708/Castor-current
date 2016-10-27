@@ -45,7 +45,7 @@ import java.util.Set;
  * Distributed Store for Castor.
  */
 
-@Component(immediate = true)
+@Component(immediate = true, enabled = true)
 @Service
 public class DistributedCastorStore implements CastorStore {
 
@@ -64,6 +64,8 @@ public class DistributedCastorStore implements CastorStore {
 
     @Activate
     protected void activate() {
+
+        log.info("trying to start the store");
 
         addressMap = storageService.<IpAddress, MacAddress>consistentMapBuilder()
                 .withName("castor-addressMap")
@@ -110,7 +112,7 @@ public class DistributedCastorStore implements CastorStore {
                 .build()
                 .asDistributedSet();
 
-        log.info("Started");
+        log.info("Castor store Started");
 
     }
 
@@ -136,6 +138,7 @@ public class DistributedCastorStore implements CastorStore {
 
     @Override
     public void storeServer(Peer server) {
+
         routeServers.add(server);
     }
 
